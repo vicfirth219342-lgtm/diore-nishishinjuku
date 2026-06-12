@@ -665,6 +665,14 @@
     text-align:center;
     margin-top: 4px;
   }
+  .contact-form__result{
+    text-align:center;
+    font-size: 0.9rem;
+    line-height: 1.9;
+    min-height: 1.9em;
+  }
+  .contact-form__result--success{ color: var(--greige); }
+  .contact-form__result--error{ color: #e2a3a3; }
 
   /* ===================== FIXED BOTTOM CTA ===================== */
   .fixed-cta{
@@ -1181,7 +1189,9 @@
     より詳しい資料をお送りします。<br>
     内見やご相談も、お気軽にお問い合わせください。
   </p>
-  <form class="contact-form reveal" id="contactForm" method="POST">
+  <form class="contact-form reveal" id="contactForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+    <input type="hidden" name="_subject" value="【LP】ディオレ西新宿 お問い合わせ">
+    <input type="hidden" name="_replyto" value="">
     <div class="contact-form__field">
       <label class="contact-form__label" for="contactName">お名前<span class="req">必須</span></label>
       <input class="contact-form__input" type="text" id="contactName" name="name" placeholder="山田 太郎" required>
@@ -1199,7 +1209,8 @@
       <textarea class="contact-form__textarea" id="contactMessage" name="message" placeholder="資料請求・内見・ご相談など、ご希望の内容をご記入ください"></textarea>
     </div>
     <button type="submit" class="btn btn--primary contact-form__submit">送信する</button>
-    <p class="contact-form__note">※送信ボタンは現在準備中です。フォーム送信機能は別途設定いたします。</p>
+    <p class="contact-form__result" id="contactFormResult" aria-live="polite"></p>
+    <p class="contact-form__note">送信内容は id_home219342@yahoo.co.jp 宛に送信されます。</p>
   </form>
 </section>
 
@@ -1284,14 +1295,43 @@
     });
   }, { passive: true });
 
-  /* ---------- Contact form (placeholder until Vercel form handler is wired up) ---------- */
+  /* ---------- Contact form (Formspree) ---------- */
   var contactForm = document.getElementById('contactForm');
+  var contactResult = document.getElementById('contactFormResult');
+  var contactReplyTo = contactForm.querySelector('input[name="_replyto"]');
+  var contactEmailField = document.getElementById('contactEmail');
+  var contactSubmitBtn = contactForm.querySelector('.contact-form__submit');
+
   contactForm.addEventListener('submit', function(e){
     e.preventDefault();
-    if (typeof gtag === 'function') {
-      gtag('event', 'generate_lead', { method: 'contact_form' });
-    }
-    alert('お問い合わせありがとうございます。\n（現在フォーム送信機能は準備中です。後日設定いたします。）');
+
+    contactReplyTo.value = contactEmailField.value;
+    contactResult.textContent = '';
+    contactResult.className = 'contact-form__result';
+    contactSubmitBtn.disabled = true;
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (response.ok) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { method: 'contact_form' });
+        }
+        contactResult.textContent = 'お問い合わせありがとうございます。担当者よりご連絡いたします。';
+        contactResult.className = 'contact-form__result contact-form__result--success';
+        contactForm.reset();
+      } else {
+        contactResult.textContent = '送信に失敗しました。お手数ですが、しばらくしてから再度お試しください。';
+        contactResult.className = 'contact-form__result contact-form__result--error';
+      }
+    }).catch(function(){
+      contactResult.textContent = '送信に失敗しました。お手数ですが、しばらくしてから再度お試しください。';
+      contactResult.className = 'contact-form__result contact-form__result--error';
+    }).finally(function(){
+      contactSubmitBtn.disabled = false;
+    });
   });
 
   /* ---------- Floor plan lightbox ---------- */
