@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ディオレ西新宿 ｜ 最上階角住戸 ─ 東京の空を暮らす。</title>
+<meta name="description" content="渋谷区本町・西新宿エリア最上階15階角住戸。約98㎡のゆとりと、時間とともに表情を変える眺望。理想の住まいへ。">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+  :root{
+    --black:#161513;
+    --ink:#2b2925;
+    --white:#ffffff;
+    --paper:#fbf9f6;
+    --greige:#d8d0c4;
+    --greige-dark:#a89e8f;
+    --greige-deep:#7d7468;
+    --line: rgba(43,41,37,0.08);
+    --serif: "Noto Serif JP","Hiragino Mincho ProN", serif;
+    --sans: "Hiragino Sans","Noto Sans JP","Helvetica Neue",Arial,sans-serif;
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    padding-bottom: 78px; /* space for fixed CTA */
+  }
+
+  img{ display:block; max-width:100%; height:auto; }
+
+  .reveal{
+    opacity:0;
+    transform: translateY(28px);
+    transition: opacity 1.1s var(--ease), transform 1.1s var(--ease);
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform: translateY(0);
+  }
+
+  /* ===================== HERO ===================== */
+  .hero{
+    position:relative;
+    height: 100vh;
+    min-height: 640px;
+    width:100%;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    color: var(--white);
+  }
+  .hero__img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    transform: scale(1.05);
+    animation: heroZoom 18s ease-out forwards;
+  }
+  @keyframes heroZoom{ from{ transform:scale(1.12);} to{ transform:scale(1);} }
+  .hero__overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.05) 35%, rgba(10,10,10,0.65) 100%);
+  }
+  .hero__content{
+    position:relative;
+    z-index:2;
+    padding: 0 6vw 9vh;
+    width:100%;
+  }
+  .hero__eyebrow{
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform:uppercase;
+    opacity:.85;
+    margin-bottom: 18px;
+    font-weight:300;
+  }
+  .hero__title{
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 8vw, 4.6rem);
+    line-height:1.35;
+    font-weight:500;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.25);
+  }
+  .hero__sub{
+    font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+    font-weight:300;
+    line-height:2;
+    max-width: 30em;
+    opacity:.95;
+    margin-bottom: 40px;
+  }
+  .hero__scroll{
+    position:absolute;
+    right: 6vw; bottom: 4vh;
+    z-index:2;
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    writing-mode: vertical-rl;
+    opacity:.75;
+    display:flex; align-items:center; gap:14px;
+  }
+  .hero__scroll::after{
+    content:"";
+    display:block;
+    width:1px; height:46px;
+    background: rgba(255,255,255,0.6);
+    animation: scrollLine 2.4s ease-in-out infinite;
+  }
+  @keyframes scrollLine{ 0%,100%{ transform: scaleY(0.4); opacity:.4;} 50%{ transform: scaleY(1); opacity:1;} }
+
+  /* ===================== BUTTONS ===================== */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding: 18px 38px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    letter-spacing: 0.18em;
+    font-weight:400;
+    text-decoration:none;
+    cursor:pointer;
+    border: 1px solid transparent;
+    transition: all .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn--primary{
+    background: var(--white);
+    color: var(--black);
+  }
+  .btn--primary:hover{
+    background: var(--greige);
+    transform: translateY(-2px);
+  }
+  .btn--outline{
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn--outline:hover{
+    background: var(--ink);
+    color: var(--white);
+  }
+  .btn--light{
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.6);
+  }
+  .btn--light:hover{
+    background: var(--white);
+    color: var(--black);
+  }
+
+  /* ===================== SECTION GENERIC ===================== */
+  .section{
+    padding: 8vh 6vw;
+    position:relative;
+  }
+  .section--tight{ padding: 6vh 6vw; }
+  .section--dark{
+    background: var(--black);
+    color: var(--white);
+  }
+  .section--greige{
+    background: var(--greige);
+    color: var(--ink);
+  }
+  .section--white{ background: var(--white); }
+
+  .label{
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform:uppercase;
+    color: var(--greige-deep);
+    margin-bottom: 22px;
+    display:block;
+  }
+  .section--dark .label, .section--greige .label{ color: rgba(255,255,255,0.55); }
+  .section--greige .label{ color: var(--greige-deep); }
+
+  .section-title{
+    font-family: var(--serif);
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+    line-height:1.6;
+    font-weight:500;
+    margin-bottom: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  .section-lead{
+    font-size: 0.98rem;
+    line-height:2.1;
+    max-width: 34em;
+    font-weight:300;
+    color: inherit;
+    opacity:.85;
+  }
+
+  /* ===================== VIEW (TIME OF DAY) - COMPACT ===================== */
+  .time-scroll{
+    display:flex;
+    gap: 14px;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    margin-top: 5vh;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .time-scroll::-webkit-scrollbar{ display:none; }
+  .time-card{
+    position:relative;
+    flex: 0 0 76%;
+    aspect-ratio: 3/4;
+    overflow:hidden;
+    scroll-snap-align: start;
+    border-radius: 2px;
+    background: var(--greige);
+  }
+  .time-card img{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .time-card figcaption{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding: 26px;
+    color: var(--white);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.62) 100%);
+  }
+  .time-card__tag{
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    margin-bottom: 10px;
+    opacity:.9;
+    display:block;
+  }
+  .time-card__copy{
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight:500;
+    line-height:1.7;
+    letter-spacing: 0.04em;
+    display:block;
+  }
+  @media (min-width: 640px){
+    .time-card{ flex: 0 0 44%; }
+  }
+  @media (min-width: 1000px){
+    .time-scroll{ overflow-x:visible; }
+    .time-card{ flex: 0 0 23.5%; }
+  }
+
+  /* ===================== LIFESTYLE / FEATURE ROWS ===================== */
+  .feature-rows{
+    display:flex;
+    flex-direction:column;
+    gap: 9vh;
+    margin-top: 6vh;
+  }
+  .feature-row{
+    display:flex;
+    flex-direction:column;
+    gap: 28px;
+  }
+  .feature-row__media{
+    position:relative;
+    width:100%;
+    aspect-ratio: 4/3;
+    overflow:hidden;
+    background: var(--greige);
+  }
+  .feature-row__media img{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .feature-row__tag{
+    position:absolute;
+    bottom:14px; left:14px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--white);
+    background: rgba(20,18,16,0.6);
+    padding: 6px 14px;
+    backdrop-filter: blur(2px);
+  }
+  .feature-row__text{ width:100%; }
+  @media (min-width: 900px){
+    .feature-row{
+      flex-direction: row;
+      align-items:center;
+      gap: 56px;
+    }
+    .feature-row__media, .feature-row__text{ flex: 1 1 50%; }
+    .feature-row--reverse{ flex-direction: row-reverse; }
+  }
+
+  .lifestyle__num{
+    font-family: var(--serif);
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    color: var(--greige-deep);
+    margin-bottom: 14px;
+    display:block;
+  }
+  .lifestyle__heading{
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 3.6vw, 1.9rem);
+    font-weight:500;
+    line-height:1.7;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .lifestyle__text{
+    font-size: 0.95rem;
+    line-height: 2.1;
+    color: var(--ink);
+    opacity:.8;
+    font-weight:300;
+  }
+
+  /* ===================== GALLERY ===================== */
+  .gallery{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .gallery__item{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio: 4/5;
+    background: var(--greige);
+  }
+  .gallery__item img{
+    width:100%; height:100%;
+    object-fit:cover;
+    transition: transform 1.4s var(--ease);
+  }
+  .gallery__item:hover img{ transform: scale(1.06); }
+  .gallery__item--wide{ grid-column: span 2; aspect-ratio: 16/10; }
+  .gallery__caption{
+    position:absolute;
+    bottom:0; left:0; right:0;
+    padding: 16px 18px;
+    color: var(--white);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+    display:flex;
+    flex-direction:column;
+    gap: 6px;
+  }
+  .gallery__caption-en{
+    font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+  .gallery__caption-tag{
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    opacity:.85;
+    padding: 3px 10px;
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 999px;
+    align-self:flex-start;
+  }
+
+  @media (min-width: 760px){
+    .gallery{ grid-template-columns: repeat(4, 1fr); }
+    .gallery__item--wide{ grid-column: span 2; }
+  }
+
+  /* ===================== OPTIONS / CARDS ===================== */
+  .options{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 6vh;
+  }
+  @media (min-width: 860px){
+    .options{ grid-template-columns: repeat(3, 1fr); }
+  }
+  .option-card{
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 44px 32px;
+    display:flex;
+    flex-direction:column;
+    gap: 18px;
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .option-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(43,41,37,0.08);
+  }
+  .option-card__tag{
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--greige-deep);
+  }
+  .option-card__title{
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight:500;
+    letter-spacing: 0.04em;
+  }
+  .option-card__text{
+    font-size: 0.92rem;
+    line-height: 1.95;
+    opacity:.78;
+    font-weight:300;
+  }
+
+  /* ===================== RENOVATION BEFORE/AFTER ===================== */
+  .renovation-set{
+    margin-bottom: 7vh;
+  }
+  .renovation-set:last-child{ margin-bottom: 0; }
+  .renovation-set__label{
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 18px;
+  }
+  .renovation-pair{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .renovation-pair figure{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio: 4/3;
+    background: var(--greige);
+  }
+  .renovation-pair img{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .renovation-pair figcaption{
+    position:absolute; top:14px; left:14px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--white);
+    background: rgba(20,18,16,0.6);
+    padding: 6px 14px;
+    backdrop-filter: blur(2px);
+  }
+
+  /* ===================== FLEXIBLE PROPOSAL ===================== */
+  .flexible-list{
+    display:flex;
+    flex-direction:column;
+    gap: 1px;
+    margin-top: 5vh;
+    border-top: 1px solid var(--line);
+  }
+  .flexible-list__row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+  .flexible-list__row span:first-child{
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    flex: 0 0 auto;
+  }
+  .flexible-list__row span:last-child{
+    text-align:right;
+    opacity:.7;
+    font-size: 0.85rem;
+  }
+
+  /* ===================== FLOOR PLAN ===================== */
+  .floorplan-wrap{
+    margin-top: 5vh;
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 5vw;
+    display:flex;
+    justify-content:center;
+    cursor: zoom-in;
+  }
+  .floorplan-wrap img{
+    max-width: 100%;
+  }
+  .floorplan-note{
+    margin-top: 18px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    opacity:.55;
+    text-align:center;
+  }
+  .lightbox{
+    position: fixed; inset:0;
+    background: rgba(15,14,13,0.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index: 999;
+    padding: 24px;
+  }
+  .lightbox.is-open{ display:flex; }
+  .lightbox img{
+    max-width: 100%;
+    max-height: 92vh;
+    background: var(--white);
+    padding: 12px;
+  }
+
+  /* ===================== OVERVIEW TABLE ===================== */
+  .overview{
+    margin-top: 5vh;
+    border-top: 1px solid var(--line);
+  }
+  .overview__row{
+    display:flex;
+    flex-direction:column;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    gap: 6px;
+  }
+  @media (min-width: 640px){
+    .overview__row{
+      flex-direction:row;
+      gap: 40px;
+    }
+  }
+  .overview__key{
+    flex: 0 0 11em;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--greige-deep);
+    text-transform:uppercase;
+  }
+  .overview__value{
+    font-size: 1rem;
+    font-weight:300;
+    letter-spacing: 0.03em;
+  }
+  .overview__price .overview__value{
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===================== FINAL CTA ===================== */
+  .final-cta{
+    text-align:center;
+    padding: 12vh 6vw;
+    background: var(--black);
+    color: var(--white);
+  }
+  .final-cta .section-title{ margin: 0 auto 18px; }
+  .final-cta__lead{
+    max-width: 30em;
+    margin: 0 auto 44px;
+    opacity:.75;
+    font-size: 0.95rem;
+    line-height: 2.1;
+  }
+  .final-cta__buttons{
+    display:flex;
+    flex-direction:column;
+    gap: 16px;
+    align-items:center;
+  }
+  @media (min-width:560px){
+    .final-cta__buttons{ flex-direction:row; justify-content:center; }
+  }
+
+  /* ===================== FIXED BOTTOM CTA ===================== */
+  .fixed-cta{
+    position: fixed;
+    left:0; right:0; bottom:0;
+    z-index: 500;
+    background: rgba(22,21,19,0.96);
+    backdrop-filter: blur(8px);
+    color: var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 14px 5vw;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .fixed-cta .btn{
+    width: 100%;
+    max-width: 520px;
+    padding: 16px 28px;
+    background: var(--white);
+    color: var(--black);
+    border: none;
+  }
+
+  /* ===================== FOOTER ===================== */
+  .footer{
+    padding: 6vh 6vw 4vh;
+    background: var(--black);
+    color: rgba(255,255,255,0.4);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-align:center;
+    line-height: 2.4;
+  }
+
+  /* logo / property name mark */
+  .mark{
+    font-family: var(--serif);
+    letter-spacing: 0.3em;
+    font-size: 0.8rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- 1. HERO -->
+<!-- ============================================================ -->
+<section class="hero">
+  <img class="hero__img" src="view/view_sunset.png" alt="最上階角住戸から望む夕暮れの東京の街並み">
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow reveal is-visible">DIORE NISHI-SHINJUKU ／ TOP FLOOR RESIDENCE</p>
+    <h1 class="hero__title reveal is-visible">東京の空を<br>暮らす。</h1>
+    <p class="hero__sub reveal is-visible">15階建て最上階角住戸。<br>約98㎡のゆとりと、<br>時間とともに表情を変える眺望。</p>
+    <a href="#contact" class="btn btn--light reveal is-visible cta-link" data-cta="hero">詳細資料を受け取る</a>
+  </div>
+  <div class="hero__scroll">SCROLL</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 2. 眺望セクション（時間ごとに変わる空の表情） -->
+<!-- ============================================================ -->
+<section class="section section--dark" data-section="view">
+  <span class="label reveal">A DAY IN THE SKY</span>
+  <h2 class="section-title reveal">時間ごとに変わる、<br>空の表情。</h2>
+  <p class="section-lead reveal">朝の光から夜の灯りまで。同じ場所から見える景色が、一日のうちに何度も表情を変えていきます。</p>
+
+  <div class="time-scroll reveal">
+    <figure class="time-card">
+      <img src="view/view_day.jpg" alt="朝の眺望、やわらかな光に包まれる街並み" loading="lazy">
+      <figcaption>
+        <span class="time-card__tag">MORNING ─ 朝</span>
+        <span class="time-card__copy">やわらかな光で<br>始まる一日</span>
+      </figcaption>
+    </figure>
+    <figure class="time-card">
+      <img src="balcony/balcony_image1.png" alt="昼のテラス、青空と街を見渡す開放的な眺め" loading="lazy">
+      <figcaption>
+        <span class="time-card__tag">DAYTIME ─ 昼</span>
+        <span class="time-card__copy">空の広さを感じる<br>開放的な時間</span>
+      </figcaption>
+    </figure>
+    <figure class="time-card">
+      <img src="view/view_sunset.png" alt="夕方、街がオレンジ色に染まる眺望" loading="lazy">
+      <figcaption>
+        <span class="time-card__tag">EVENING ─ 夕方</span>
+        <span class="time-card__copy">街がゆっくりと<br>色づくひととき</span>
+      </figcaption>
+    </figure>
+    <figure class="time-card">
+      <img src="view/view_night.png" alt="夜、東京の灯りが広がる夜景" loading="lazy">
+      <figcaption>
+        <span class="time-card__tag">NIGHT ─ 夜</span>
+        <span class="time-card__copy">東京の灯りが<br>広がる夜景</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 3. 住まいの魅力 -->
+<!-- ============================================================ -->
+<section class="section section--white" data-section="lifestyle">
+  <span class="label reveal">A NEW EVERYDAY</span>
+  <h2 class="section-title reveal">住まいの魅力</h2>
+
+  <div class="feature-rows">
+    <div class="feature-row reveal">
+      <div class="feature-row__media">
+        <img src="balcony/balcony_image2.png" alt="バルコニーラウンジ 参考イメージ" loading="lazy">
+        <span class="feature-row__tag">参考イメージ</span>
+      </div>
+      <div class="feature-row__text">
+        <span class="lifestyle__num">01 ─ 最上階</span>
+        <h3 class="lifestyle__heading">誰にも遮られることのない、<br>最上階だけの静けさ。</h3>
+        <p class="lifestyle__text">15階建ての頂に位置するこの住戸には、上階の生活音も、行き交う足音も届きません。エレベーターを降りた瞬間から、ここだけの空気が広がります。手に入るのは、住まいそのものの価値だけでなく、「最上階で暮らす」という特別な感覚です。</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse reveal">
+      <div class="feature-row__media">
+        <img src="living/living_image3.png" alt="リビング リフォーム参考イメージ" loading="lazy">
+        <span class="feature-row__tag">リフォーム参考イメージ</span>
+      </div>
+      <div class="feature-row__text">
+        <span class="lifestyle__num">02 ─ 角住戸</span>
+        <h3 class="lifestyle__heading">二方向に開かれた窓が、<br>光と風を呼び込む。</h3>
+        <p class="lifestyle__text">角住戸ならではの恵まれた採光と通風。南西向きの窓からは一日を通してやわらかな光が注ぎ込み、空間全体を明るく満たします。風が通り抜けるたびに、暮らしに小さな心地よさが生まれます。</p>
+      </div>
+    </div>
+
+    <div class="feature-row reveal">
+      <div class="feature-row__media">
+        <img src="living/living_image5.png" alt="リビング・ダイニング リフォーム参考イメージ" loading="lazy">
+        <span class="feature-row__tag">リフォーム参考イメージ</span>
+      </div>
+      <div class="feature-row__text">
+        <span class="lifestyle__num">03 ─ 開放感</span>
+        <h3 class="lifestyle__heading">約98㎡の空間が生む、<br>ゆとりという贅沢。</h3>
+        <p class="lifestyle__text">広さは、ただ大きいということではありません。家族それぞれが思い思いの時間を過ごせる距離感、モノを置いてもなお残る余白。約98㎡というスケールが、暮らしに静かなゆとりをもたらします。</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse reveal">
+      <div class="feature-row__media">
+        <img src="view/view_sunset.png" alt="実際の眺望写真" loading="lazy">
+        <span class="feature-row__tag">実際の眺望写真</span>
+      </div>
+      <div class="feature-row__text">
+        <span class="lifestyle__num">04 ─ 眺望</span>
+        <h3 class="lifestyle__heading">窓の外に広がるのは、<br>変わり続ける東京の表情。</h3>
+        <p class="lifestyle__text">朝の光、昼の空の広さ、夕方の彩り、夜の灯り。同じ場所から見える景色が、一日のうちに何度も変わっていく。この眺望は、暮らしの中にいつも新しい時間を運んでくれます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 4. POSSIBILITIES（選択肢／柔軟なご提案／リノベーションの可能性） -->
+<!-- ============================================================ -->
+<section class="section section--greige" data-section="options">
+  <span class="label reveal">YOUR CHOICE</span>
+  <h2 class="section-title reveal">この住まいには、<br>さまざまな選択肢があります。</h2>
+  <p class="section-lead reveal">この住戸は現在リフォーム前の段階にあります。最上階角住戸という器を、どう活かすかはあなた次第です。</p>
+
+  <div class="options">
+    <div class="option-card reveal">
+      <span class="option-card__tag">OPTION 01</span>
+      <h3 class="option-card__title">そのまま住む</h3>
+      <p class="option-card__text">現在の住空間を活かしながら、最上階角住戸ならではの開放感と眺望を、そのまま楽しむ。手を加えずとも、十分な魅力がここにはあります。</p>
+    </div>
+    <div class="option-card reveal">
+      <span class="option-card__tag">OPTION 02</span>
+      <h3 class="option-card__title">一部リフォームする</h3>
+      <p class="option-card__text">キッチンや水回りなど、必要な部分だけを自分好みに整える。暮らしながら、少しずつ理想に近づけていくという選択。</p>
+    </div>
+    <div class="option-card reveal">
+      <span class="option-card__tag">OPTION 03</span>
+      <h3 class="option-card__title">フルリノベーションする</h3>
+      <p class="option-card__text">約98㎡の空間を活かし、理想の住まいを一からつくる。広さと眺望という資産を、まったく新しい暮らしへと再構築する。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white" data-section="flexible">
+  <span class="label reveal">FLEXIBLE PLAN</span>
+  <h2 class="section-title reveal">ご要望に合わせて、<br>柔軟にご提案いたします。</h2>
+  <p class="section-lead reveal">
+    この住まいとの向き合い方は、ひとつではありません。<br>
+    現況のままご購入いただくことも、一部リフォームのご相談も、<br>
+    約98㎡という空間を活かしたフルリノベーションプランのご提案も可能です。<br><br>
+    また、売主様のご意向により、価格やお引き渡し時期など条件面についても、<br>
+    柔軟にご相談いただけます。<br><br>
+    まずは、この住まいの可能性についてお気軽にお問い合わせください。
+  </p>
+
+  <div class="flexible-list">
+    <div class="flexible-list__row reveal">
+      <span>現況でのご購入</span>
+      <span>いま見える空間を、そのまま手に入れる</span>
+    </div>
+    <div class="flexible-list__row reveal">
+      <span>一部リフォームのご相談</span>
+      <span>キッチン・水まわりなど、必要な箇所から</span>
+    </div>
+    <div class="flexible-list__row reveal">
+      <span>フルリノベーションのご提案</span>
+      <span>約98㎡を活かした、一からの空間づくり</span>
+    </div>
+    <div class="flexible-list__row reveal">
+      <span>価格・条件のご相談</span>
+      <span>売主様のご意向により柔軟に対応可能</span>
+    </div>
+  </div>
+
+  <p style="margin-top:32px; font-size:0.78rem; opacity:.5; letter-spacing:0.05em;">※上記は不動産取引における一般的なご相談対応の例です。詳細は担当者までお問い合わせください。</p>
+</section>
+
+<section class="section section--greige" data-section="renovation">
+  <span class="label reveal">POSSIBILITIES</span>
+  <h2 class="section-title reveal">理想の住まいを、<br>実現できる可能性。</h2>
+  <p class="section-lead reveal">
+    この物件は、現在リフォーム前の段階です。<br><br>
+    そのため、現在の空間を活かしてそのまま住むことも、一部だけを整えることも、フルリノベーションで理想の住まいに仕上げることも可能です。<br><br>
+    購入後の暮らし方に合わせて、内装・仕様・条件面について柔軟にご相談いただけます。<br><br>
+    以下は、約98㎡の空間が将来どのような表情に変わり得るのかをお伝えするための、リフォーム参考イメージです。
+  </p>
+
+  <div style="margin-top:6vh;">
+
+    <div class="renovation-set reveal">
+      <p class="renovation-set__label">LIVING ─ リビング</p>
+      <div class="renovation-pair">
+        <figure>
+          <img src="living/living_current_state.png" alt="リビング現況写真" loading="lazy">
+          <figcaption>現況写真</figcaption>
+        </figure>
+        <figure>
+          <img src="living/living_image2.png" alt="リビング リフォーム参考イメージ" loading="lazy">
+          <figcaption>リフォーム参考イメージ</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="renovation-set reveal">
+      <p class="renovation-set__label">KITCHEN ─ キッチン</p>
+      <div class="renovation-pair">
+        <figure>
+          <img src="kitchen/kitchen_current_state.png" alt="キッチン現況写真" loading="lazy">
+          <figcaption>現況写真</figcaption>
+        </figure>
+        <figure>
+          <img src="kitchen/kitchen_image1.png" alt="キッチン リフォーム参考イメージ" loading="lazy">
+          <figcaption>リフォーム参考イメージ</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="renovation-set reveal">
+      <p class="renovation-set__label">BEDROOM ─ ベッドルーム</p>
+      <div class="renovation-pair">
+        <figure>
+          <img src="bedroom/bedroom_current_state.png" alt="ベッドルーム現況写真" loading="lazy">
+          <figcaption>現況写真</figcaption>
+        </figure>
+        <figure>
+          <img src="bedroom/bedroom_image1.png" alt="ベッドルーム リフォーム参考イメージ" loading="lazy">
+          <figcaption>リフォーム参考イメージ</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="renovation-set reveal">
+      <p class="renovation-set__label">STUDY ROOM ─ 書斎・個室</p>
+      <div class="renovation-pair">
+        <figure>
+          <img src="readingroom/readingroom_current_state.png" alt="書斎現況写真" loading="lazy">
+          <figcaption>現況写真</figcaption>
+        </figure>
+        <figure>
+          <img src="readingroom/reading_room1.png" alt="書斎 リフォーム参考イメージ" loading="lazy">
+          <figcaption>リフォーム参考イメージ</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="renovation-set reveal">
+      <p class="renovation-set__label">BATHROOM ─ 浴室</p>
+      <div class="renovation-pair">
+        <figure>
+          <img src="bathroom/bathroom_current_state.png" alt="浴室現況写真" loading="lazy">
+          <figcaption>現況写真</figcaption>
+        </figure>
+        <figure>
+          <img src="bathroom/bathroom_image1.png" alt="浴室 リフォーム参考イメージ" loading="lazy">
+          <figcaption>リフォーム参考イメージ</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="renovation-set reveal">
+      <p class="renovation-set__label">POWDER ROOM ─ 洗面・脱衣室</p>
+      <div class="renovation-pair">
+        <figure>
+          <img src="powderroom/powderroom_current_state.png" alt="洗面・脱衣室現況写真" loading="lazy">
+          <figcaption>現況写真</figcaption>
+        </figure>
+        <figure>
+          <img src="powderroom/powderroom_image1.png" alt="洗面・脱衣室 リフォーム参考イメージ" loading="lazy">
+          <figcaption>リフォーム参考イメージ</figcaption>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="margin-top:32px; font-size:0.78rem; opacity:.55; letter-spacing:0.05em; line-height:2;">
+    ※上記イメージはリフォームプランの一例を示す参考写真・施工例であり、本物件にリフォームが含まれることを意味するものではありません。<br>
+    ※実際の仕様・プラン・費用については別途ご相談ください。
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<!-- 5. 写真ギャラリー -->
+<!-- ============================================================ -->
+<section class="section section--white" data-section="gallery">
+  <span class="label reveal">GALLERY</span>
+  <h2 class="section-title reveal">空間のイメージ</h2>
+  <p class="section-lead reveal">リビング、ダイニング、キッチン、そして居室。光と風が通り抜けるそれぞれの場所が、どのような表情になり得るかをご紹介します。</p>
+
+  <div class="gallery" style="margin-top:5vh;">
+    <div class="gallery__item gallery__item--wide reveal">
+      <img src="living/living_image2.png" alt="リビング・ダイニング リフォーム参考イメージ" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">LIVING &amp; DINING</span>
+        <span class="gallery__caption-tag">リフォーム参考イメージ</span>
+      </span>
+    </div>
+    <div class="gallery__item reveal">
+      <img src="living/living_image1.png" alt="リビング リフォーム参考イメージ" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">LIVING</span>
+        <span class="gallery__caption-tag">リフォーム参考イメージ</span>
+      </span>
+    </div>
+    <div class="gallery__item reveal">
+      <img src="kitchen/kitchen_image2.png" alt="キッチン リフォーム参考イメージ" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">KITCHEN</span>
+        <span class="gallery__caption-tag">リフォーム参考イメージ</span>
+      </span>
+    </div>
+    <div class="gallery__item reveal">
+      <img src="bedroom/bedroom_image2.png" alt="ベッドルーム リフォーム参考イメージ" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">BEDROOM</span>
+        <span class="gallery__caption-tag">リフォーム参考イメージ</span>
+      </span>
+    </div>
+    <div class="gallery__item reveal">
+      <img src="readingroom/reading_room2.png" alt="書斎・個室 リフォーム参考イメージ" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">STUDY ROOM</span>
+        <span class="gallery__caption-tag">リフォーム参考イメージ</span>
+      </span>
+    </div>
+    <div class="gallery__item gallery__item--wide reveal">
+      <img src="balcony/balcony_image2.png" alt="バルコニーラウンジ 参考イメージ" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">BALCONY LOUNGE</span>
+        <span class="gallery__caption-tag">参考イメージ</span>
+      </span>
+    </div>
+    <div class="gallery__item gallery__item--wide reveal">
+      <img src="view/view_sunset.png" alt="夕景の眺望 現況写真" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">VIEW</span>
+        <span class="gallery__caption-tag">現況写真</span>
+      </span>
+    </div>
+    <div class="gallery__item reveal">
+      <img src="bathroom/bathroom_image1.png" alt="浴室 リフォーム参考イメージ" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">BATHROOM</span>
+        <span class="gallery__caption-tag">リフォーム参考イメージ</span>
+      </span>
+    </div>
+    <div class="gallery__item reveal">
+      <img src="powderroom/powderroom_image1.png" alt="洗面・脱衣室 リフォーム参考イメージ" loading="lazy">
+      <span class="gallery__caption">
+        <span class="gallery__caption-en">POWDER ROOM</span>
+        <span class="gallery__caption-tag">リフォーム参考イメージ</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 6. 間取り -->
+<!-- ============================================================ -->
+<section class="section section--white" data-section="floorplan">
+  <span class="label reveal">FLOOR PLAN</span>
+  <h2 class="section-title reveal">間取り</h2>
+  <p class="section-lead reveal">2LDK ／ 専有面積 98.69㎡ ／ ルーフバルコニー 20.4㎡。タップして拡大できます。</p>
+
+  <div class="floorplan-wrap reveal" id="floorplanTrigger">
+    <img src="floor_plan.png" alt="間取り図">
+  </div>
+  <p class="floorplan-note">画像をタップ／クリックすると拡大表示します</p>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <img src="floor_plan.png" alt="間取り図（拡大）">
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. 物件概要 -->
+<!-- ============================================================ -->
+<section class="section section--white" data-section="overview">
+  <span class="label reveal">PROPERTY OVERVIEW</span>
+  <h2 class="section-title reveal">物件概要</h2>
+
+  <div class="overview reveal">
+    <div class="overview__row overview__price">
+      <span class="overview__key">物件名</span>
+      <span class="overview__value">ディオレ西新宿</span>
+    </div>
+    <div class="overview__row overview__price">
+      <span class="overview__key">販売価格</span>
+      <span class="overview__value">18,000万円（税込）</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">所在地</span>
+      <span class="overview__value">東京都渋谷区本町3丁目31-2</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">交通</span>
+      <span class="overview__value">
+        都営大江戸線「西新宿五丁目」駅 徒歩4分<br>
+        東京メトロ丸ノ内線「中野坂上」駅 徒歩9分<br>
+        京王新線「初台」駅 徒歩15分
+      </span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">専有面積</span>
+      <span class="overview__value">98.69㎡（壁芯）</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">ルーフバルコニー面積</span>
+      <span class="overview__value">20.4㎡</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">間取り</span>
+      <span class="overview__value">2LDK</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">所在階／構造</span>
+      <span class="overview__value">15階／鉄骨鉄筋コンクリート造 地上15階建</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">総戸数</span>
+      <span class="overview__value">68戸</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">築年月</span>
+      <span class="overview__value">1999年2月</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">管理費</span>
+      <span class="overview__value">13,800円／月</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">修繕積立金</span>
+      <span class="overview__value">19,700円／月</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">ルーフバルコニー使用料</span>
+      <span class="overview__value">1,200円／月</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">駐車場</span>
+      <span class="overview__value">空有</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">現況</span>
+      <span class="overview__value">居住中</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">引渡し</span>
+      <span class="overview__value">相談</span>
+    </div>
+    <div class="overview__row">
+      <span class="overview__key">取引形態</span>
+      <span class="overview__value">媒介</span>
+    </div>
+  </div>
+
+  <p style="margin-top:28px; font-size:0.78rem; opacity:.5; letter-spacing:0.05em; line-height:2;">
+    ※掲載写真の一部は、リフォームプランのイメージ・施工例を含みます。実際の現況とは異なります。<br>
+    ※現況が広告内容と異なる場合は現況を優先します。<br>
+    ※価格・条件は変更される場合があります。詳細は担当者までお問い合わせください。
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<!-- 8. 資料請求（最終CTA） -->
+<!-- ============================================================ -->
+<section class="final-cta" id="contact" data-section="contact">
+  <span class="label reveal">CONTACT</span>
+  <h2 class="section-title reveal">この住まいでの暮らしを、<br>もう少し近くで。</h2>
+  <p class="final-cta__lead reveal">
+    間取りや眺望、リフォームの可能性など、<br>
+    より詳しい資料をお送りします。<br>
+    内見やご相談も、お気軽にお問い合わせください。
+  </p>
+  <div class="final-cta__buttons reveal">
+    <a href="#" class="btn btn--primary cta-link" data-cta="final_document">詳細資料を受け取る</a>
+    <a href="#" class="btn btn--outline btn--light cta-link" data-cta="final_consult">この住まいについて相談する</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="mark">DIORE NISHI-SHINJUKU</p>
+  <p style="margin-top:10px;">東京都渋谷区本町3丁目31-2　／　本ページは販売用LPです。記載内容は現況・最新の取引条件をご確認ください。</p>
+</footer>
+
+<!-- ============================================================ -->
+<!-- FIXED BOTTOM CTA -->
+<!-- ============================================================ -->
+<div class="fixed-cta">
+  <a href="#" class="btn cta-link" data-cta="fixed_bar">詳細資料を受け取る</a>
+</div>
+
+<script>
+(function(){
+
+  /* ---------- Mailto CTA ---------- */
+  var PROPERTY_NAME = "ディオレ西新宿";
+  var subject = "【資料請求】" + PROPERTY_NAME;
+  var body =
+    "お名前：\n" +
+    "電話番号：\n" +
+    "メールアドレス：\n\n" +
+    "ご希望内容：\n" +
+    "□資料請求\n" +
+    "□購入相談\n\n" +
+    "ご質問：\n";
+
+  var mailto = "mailto:id_home219342@yahoo.co.jp?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+  document.querySelectorAll('.cta-link').forEach(function(el){
+    el.setAttribute('href', mailto);
+    el.addEventListener('click', function(){
+      var ctaName = el.getAttribute('data-cta') || 'unknown';
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          method: ctaName,
+          link_text: el.textContent.trim()
+        });
+      }
+    });
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(function(el){ revealObserver.observe(el); });
+
+  /* ---------- Section view tracking (GA4) ---------- */
+  var sections = document.querySelectorAll('[data-section]');
+  var seenSections = {};
+  var sectionObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var name = entry.target.getAttribute('data-section');
+      if (entry.isIntersecting && !seenSections[name]){
+        seenSections[name] = true;
+        if (typeof gtag === 'function') {
+          gtag('event', 'section_view', { section_name: name });
+        }
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(function(el){ sectionObserver.observe(el); });
+
+  /* ---------- Scroll depth tracking (GA4) ---------- */
+  var depths = [25, 50, 75, 90, 100];
+  var firedDepths = {};
+  window.addEventListener('scroll', function(){
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var pct = Math.round((scrollTop / docHeight) * 100);
+    depths.forEach(function(d){
+      if (pct >= d && !firedDepths[d]){
+        firedDepths[d] = true;
+        if (typeof gtag === 'function') {
+          gtag('event', 'scroll_depth', { percent: d });
+        }
+      }
+    });
+  }, { passive: true });
+
+  /* ---------- Floor plan lightbox ---------- */
+  var trigger = document.getElementById('floorplanTrigger');
+  var lightbox = document.getElementById('lightbox');
+  trigger.addEventListener('click', function(){
+    lightbox.classList.add('is-open');
+  });
+  lightbox.addEventListener('click', function(){
+    lightbox.classList.remove('is-open');
+  });
+
+})();
+</script>
+
+</body>
+</html>
