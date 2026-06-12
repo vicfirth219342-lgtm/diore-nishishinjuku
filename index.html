@@ -1131,15 +1131,22 @@
 <script>
 (function(){
 
-  /* ---------- CTA click tracking ---------- */
+  /* ---------- CTA: scroll to contact section ---------- */
   document.querySelectorAll('.cta-link').forEach(function(el){
-    el.addEventListener('click', function(){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+
       var ctaName = el.getAttribute('data-cta') || 'unknown';
       if (typeof gtag === 'function') {
         gtag('event', 'generate_lead', {
           method: ctaName,
           link_text: el.textContent.trim()
         });
+      }
+
+      var target = document.getElementById('contact');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
