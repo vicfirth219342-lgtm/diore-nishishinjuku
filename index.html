@@ -1111,8 +1111,8 @@
     内見やご相談も、お気軽にお問い合わせください。
   </p>
   <div class="final-cta__buttons reveal">
-    <a href="#" class="btn btn--primary cta-link" data-cta="final_document">詳細資料を受け取る</a>
-    <a href="#" class="btn btn--outline btn--light cta-link" data-cta="final_consult">この住まいについて相談する</a>
+    <a href="#contact" class="btn btn--primary cta-link" data-cta="final_document">詳細資料を受け取る</a>
+    <a href="#contact" class="btn btn--outline btn--light cta-link" data-cta="final_consult">この住まいについて相談する</a>
   </div>
 </section>
 
@@ -1125,28 +1125,14 @@
 <!-- FIXED BOTTOM CTA -->
 <!-- ============================================================ -->
 <div class="fixed-cta">
-  <a href="#" class="btn cta-link" data-cta="fixed_bar">詳細資料を受け取る</a>
+  <a href="#contact" class="btn cta-link" data-cta="fixed_bar">詳細資料を受け取る</a>
 </div>
 
 <script>
 (function(){
 
-  /* ---------- Mailto CTA ---------- */
-  var PROPERTY_NAME = "ディオレ西新宿";
-  var subject = "【資料請求】" + PROPERTY_NAME;
-  var body =
-    "お名前：\n" +
-    "電話番号：\n" +
-    "メールアドレス：\n\n" +
-    "ご希望内容：\n" +
-    "□資料請求\n" +
-    "□購入相談\n\n" +
-    "ご質問：\n";
-
-  var mailto = "mailto:id_home219342@yahoo.co.jp?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
+  /* ---------- CTA click tracking ---------- */
   document.querySelectorAll('.cta-link').forEach(function(el){
-    el.setAttribute('href', mailto);
     el.addEventListener('click', function(){
       var ctaName = el.getAttribute('data-cta') || 'unknown';
       if (typeof gtag === 'function') {
