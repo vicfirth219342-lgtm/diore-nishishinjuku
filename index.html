@@ -98,19 +98,19 @@
   }
   .hero__title{
     font-family: var(--serif);
-    font-size: clamp(2.4rem, 8vw, 4.6rem);
+    font-size: clamp(2.1rem, 8vw, 4.6rem);
     line-height:1.35;
     font-weight:500;
     letter-spacing: 0.04em;
-    margin-bottom: 28px;
+    margin-bottom: 22px;
     text-shadow: 0 2px 24px rgba(0,0,0,0.25);
   }
   .hero__price{
     display:flex;
     align-items:center;
     flex-wrap:wrap;
-    gap: 12px 18px;
-    margin-bottom: 26px;
+    gap: 10px 18px;
+    margin-bottom: 20px;
   }
   .hero__price-value{
     font-family: var(--serif);
@@ -139,13 +139,28 @@
   @media (min-width: 480px){
     .hero__price-divider{ display:block; }
   }
-  .hero__sub{
-    font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  .hero__features{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .hero__features li{
+    display:flex;
+    align-items:baseline;
+    gap: 10px;
+    font-size: clamp(0.85rem, 2.4vw, 1rem);
     font-weight:300;
-    line-height:2;
-    max-width: 30em;
+    letter-spacing: 0.03em;
     opacity:.95;
-    margin-bottom: 40px;
+    white-space:nowrap;
+  }
+  .hero__features li::before{
+    content:"✓";
+    font-size: 0.85em;
+    color: var(--greige);
+    flex-shrink:0;
   }
   .hero__scroll{
     position:absolute;
@@ -815,13 +830,18 @@
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <p class="hero__eyebrow reveal is-visible">DIORE NISHI-SHINJUKU ／ TOP FLOOR RESIDENCE</p>
-    <h1 class="hero__title reveal is-visible">東京の空を<br>暮らす。</h1>
+    <h1 class="hero__title reveal is-visible">最上階角住戸。<br>都心を見渡す、あなただけの特等席。</h1>
     <div class="hero__price reveal is-visible">
       <span class="hero__price-value">1億8,000万円</span>
       <span class="hero__price-divider" aria-hidden="true"></span>
       <span class="hero__price-tag">15階最上階&nbsp;×&nbsp;角住戸</span>
     </div>
-    <p class="hero__sub reveal is-visible">15階建て最上階角住戸。<br>約98㎡のゆとりと、<br>時間とともに表情を変える眺望。</p>
+    <ul class="hero__features reveal is-visible">
+      <li>専有面積&nbsp;約98㎡</li>
+      <li>20.4㎡ルーフバルコニー</li>
+      <li>西新宿五丁目駅&nbsp;徒歩約5分</li>
+      <li>購入後リノベーションの相談可能</li>
+    </ul>
     <a href="#contact" class="btn btn--light reveal is-visible cta-link" data-cta="hero">詳細資料を受け取る</a>
   </div>
   <div class="hero__scroll">SCROLL</div>
