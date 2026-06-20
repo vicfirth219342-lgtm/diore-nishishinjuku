@@ -826,15 +826,10 @@
     text-transform:uppercase;
   }
   .company-card__row dd{ flex:1; font-weight:300; }
-  .staff-card__badge{
-    width: 56px; height:56px;
+  .staff-card__photo{
+    width: 84px; height:84px;
     border-radius:50%;
-    background: var(--ink);
-    color: var(--white);
-    display:flex; align-items:center; justify-content:center;
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    letter-spacing: 0.1em;
+    object-fit:cover;
     margin-bottom: 20px;
   }
   .staff-card__role{
@@ -1555,7 +1550,7 @@
     </div>
 
     <div class="staff-card">
-      <div class="staff-card__badge" aria-hidden="true">清藤</div>
+      <img class="staff-card__photo" src="company/staff_kiyofuji.webp" alt="担当 清藤勇志">
       <p class="staff-card__role">担当者紹介</p>
       <p class="staff-card__name">清藤 勇志（きよふじ たかし）</p>
       <p class="staff-card__text">
