@@ -744,13 +744,15 @@
     gap: 22px;
   }
   .line-card__qr{
+    display:block;
     width: 168px;
     height: 168px;
     background: var(--white);
     padding: 10px;
     border-radius: 4px;
-    cursor: zoom-in;
+    transition: transform .3s var(--ease);
   }
+  .line-card__qr:hover{ transform: translateY(-2px); }
   .line-card__qr img{ width:100%; height:100%; object-fit:contain; }
   .line-card__list{
     list-style:none;
@@ -765,7 +767,13 @@
   .line-card__list li{ display:flex; gap:8px; align-items:baseline; }
   .line-card__list li::before{ content:"・"; color: var(--greige); }
   .line-card .btn{ width:100%; }
+  .line-card__mobile-btn{ display:none; }
   .line-card__note{ font-size:0.78rem; opacity:.5; letter-spacing:0.05em; }
+
+  @media (max-width: 768px){
+    .line-card__qr{ display:none; }
+    .line-card__mobile-btn{ display:flex; }
+  }
 
   /* ===================== COMPANY ===================== */
   .company-grid{
@@ -1501,18 +1509,18 @@
   </p>
 
   <div class="line-card reveal">
-    <div class="line-card__qr" id="lineQrTrigger">
-      <img src="https://qr-official.line.me/gs/M_412wavie_GW.png?oat_content=qr" alt="公式LINE QRコード" loading="lazy">
-    </div>
+    <a class="line-card__qr cta-link" href="https://lin.ee/412wavie" target="_blank" rel="noopener" data-cta="line_qr">
+      <img src="https://qr-official.line.me/gs/M_412wavie_GW.png?oat_content=qr" alt="LINE公式アカウントQRコード" loading="lazy">
+    </a>
     <ul class="line-card__list">
       <li>販売図面が欲しい</li>
       <li>住宅ローン相談をしたい</li>
       <li>内見予約をしたい</li>
       <li>資産価値について聞きたい</li>
     </ul>
-    <a href="https://lin.ee/zqHXFnSl" target="_blank" rel="noopener" class="btn btn--line cta-link" data-cta="line_add">
+    <a href="https://lin.ee/uSNSnIC" target="_blank" rel="noopener" class="btn btn--line cta-link line-card__mobile-btn" data-cta="line_mobile">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.78 1.55 5.24 3.97 6.86-.13.93-.5 2.55-.93 3.74-.06.16.06.34.23.34.04 0 .09-.01.13-.03.15-.07 2.46-1.13 3.66-1.79.95.2 1.95.31 2.94.31 5.52 0 10-3.94 10-8.8C22 5.94 17.52 2 12 2z"/></svg>
-      LINEを追加する
+      LINEで相談する
     </a>
     <p class="line-card__note">QRコードを読み込むか、上のボタンからご登録ください</p>
   </div>
@@ -1756,15 +1764,6 @@
     var img = floorplanTrigger.querySelector('img');
     openLightbox(img.src, img.alt);
   });
-
-  /* LINE QR code */
-  var lineQrTrigger = document.getElementById('lineQrTrigger');
-  if (lineQrTrigger) {
-    lineQrTrigger.addEventListener('click', function(){
-      var img = lineQrTrigger.querySelector('img');
-      openLightbox(img.src, img.alt, '公式LINE', 'QRコードを読み込んでご登録ください');
-    });
-  }
 
   /* POSSIBILITIES: before / after photos */
   document.querySelectorAll('.renovation-pair figure').forEach(function(fig){
