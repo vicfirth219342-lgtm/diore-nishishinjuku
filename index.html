@@ -205,6 +205,26 @@
   }
   @keyframes scrollLine{ 0%,100%{ transform: scaleY(0.4); opacity:.4;} 50%{ transform: scaleY(1); opacity:1;} }
 
+  .hero__info-card{
+    background: rgba(10,10,10,0.34);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 4px;
+    padding: clamp(18px, 3vw, 26px) clamp(18px, 3vw, 24px);
+    margin-bottom: 26px;
+  }
+  .hero__info-card .hero__price{ margin-bottom: 16px; }
+  .hero__info-card .hero__features{ margin-bottom: 0; }
+
+  .hero__ctas{
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+  }
+  @media (min-width:480px){
+    .hero__ctas{ flex-direction:row; }
+  }
+
   /* ===================== BUTTONS ===================== */
   .btn{
     display:inline-flex;
@@ -248,6 +268,16 @@
     background: var(--white);
     color: var(--black);
   }
+  .btn--line{
+    background: #06C755;
+    color: #ffffff;
+    border-color: #06C755;
+  }
+  .btn--line:hover{
+    background: #05a847;
+    border-color: #05a847;
+  }
+  .btn svg{ width:18px; height:18px; flex-shrink:0; }
 
   /* ===================== SECTION GENERIC ===================== */
   .section{
@@ -697,6 +727,128 @@
     letter-spacing: 0.05em;
   }
 
+  /* ===================== LINE CONTACT ===================== */
+  .line-section{ text-align:center; }
+  .line-section .section-title,
+  .line-section .section-lead{ margin-left:auto; margin-right:auto; }
+  .line-card{
+    margin: 6vh auto 0;
+    max-width: 420px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 4px;
+    padding: clamp(28px,4vw,40px) clamp(20px,4vw,32px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 22px;
+  }
+  .line-card__qr{
+    width: 168px;
+    height: 168px;
+    background: var(--white);
+    padding: 10px;
+    border-radius: 4px;
+    cursor: zoom-in;
+  }
+  .line-card__qr img{ width:100%; height:100%; object-fit:contain; }
+  .line-card__list{
+    list-style:none;
+    text-align:left;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    font-size: 0.88rem;
+    opacity:.85;
+  }
+  .line-card__list li{ display:flex; gap:8px; align-items:baseline; }
+  .line-card__list li::before{ content:"・"; color: var(--greige); }
+  .line-card .btn{ width:100%; }
+  .line-card__note{ font-size:0.78rem; opacity:.5; letter-spacing:0.05em; }
+
+  /* ===================== COMPANY ===================== */
+  .company-grid{
+    margin-top: 5vh;
+    display:flex;
+    flex-direction:column;
+    gap: 32px;
+  }
+  @media (min-width:860px){
+    .company-grid{ flex-direction:row; }
+    .company-card, .staff-card{ flex:1 1 50%; }
+  }
+  .company-card,
+  .staff-card{
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: clamp(28px,4vw,44px) clamp(22px,3.5vw,34px);
+  }
+  .company-card__logo{
+    height: 46px;
+    width:auto;
+    margin-bottom: 22px;
+    object-fit:contain;
+  }
+  .company-card__name{
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .company-card__biz{
+    font-size: 0.85rem;
+    opacity:.65;
+    margin-bottom: 24px;
+    letter-spacing: 0.03em;
+  }
+  .company-card__row{
+    display:flex;
+    gap: 18px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.88rem;
+  }
+  .company-card__row:first-of-type{ border-top:none; }
+  .company-card__row dt{
+    flex: 0 0 6.5em;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--greige-deep);
+    text-transform:uppercase;
+  }
+  .company-card__row dd{ flex:1; font-weight:300; }
+  .staff-card__badge{
+    width: 56px; height:56px;
+    border-radius:50%;
+    background: var(--ink);
+    color: var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+  .staff-card__role{
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--greige-deep);
+    text-transform:uppercase;
+    margin-bottom: 8px;
+  }
+  .staff-card__name{
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 18px;
+  }
+  .staff-card__text{
+    font-size: 0.92rem;
+    line-height: 1.95;
+    opacity:.78;
+    font-weight:300;
+  }
+
   /* ===================== FINAL CTA ===================== */
   .final-cta{
     text-align:center;
@@ -815,10 +967,20 @@
     padding: 14px 5vw;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
+  .fixed-cta__inner{
+    display:flex;
+    gap: 10px;
+    width:100%;
+    max-width: 560px;
+  }
   .fixed-cta .btn{
-    width: 100%;
-    max-width: 520px;
-    padding: 16px 28px;
+    flex: 1 1 0;
+    width:auto;
+    padding: 14px 16px;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+  }
+  .fixed-cta .btn--primary{
     background: var(--white);
     color: var(--black);
     border: none;
@@ -854,18 +1016,26 @@
   <div class="hero__content">
     <p class="hero__eyebrow reveal is-visible">DIORE NISHI-SHINJUKU ／ TOP FLOOR RESIDENCE</p>
     <h1 class="hero__title reveal is-visible">最上階角住戸。<br>都心を見渡す、あなただけの特等席。</h1>
-    <div class="hero__price reveal is-visible">
-      <span class="hero__price-value">1億8,000万円</span>
-      <span class="hero__price-divider" aria-hidden="true"></span>
-      <span class="hero__price-tag">15階最上階&nbsp;×&nbsp;角住戸</span>
+    <div class="hero__info-card reveal is-visible">
+      <div class="hero__price">
+        <span class="hero__price-value">1億8,000万円</span>
+        <span class="hero__price-divider" aria-hidden="true"></span>
+        <span class="hero__price-tag">15階最上階&nbsp;×&nbsp;角住戸</span>
+      </div>
+      <ul class="hero__features">
+        <li>専有面積&nbsp;約98㎡</li>
+        <li>20.4㎡ルーフバルコニー</li>
+        <li>西新宿五丁目駅&nbsp;徒歩約5分</li>
+        <li>購入後リノベーションの相談可能</li>
+      </ul>
     </div>
-    <ul class="hero__features reveal is-visible">
-      <li>専有面積&nbsp;約98㎡</li>
-      <li>20.4㎡ルーフバルコニー</li>
-      <li>西新宿五丁目駅&nbsp;徒歩約5分</li>
-      <li>購入後リノベーションの相談可能</li>
-    </ul>
-    <a href="#contact" class="btn btn--light reveal is-visible cta-link" data-cta="hero">詳細資料を受け取る</a>
+    <div class="hero__ctas reveal is-visible">
+      <a href="#line" class="btn btn--line cta-link" data-cta="hero_line">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.78 1.55 5.24 3.97 6.86-.13.93-.5 2.55-.93 3.74-.06.16.06.34.23.34.04 0 .09-.01.13-.03.15-.07 2.46-1.13 3.66-1.79.95.2 1.95.31 2.94.31 5.52 0 10-3.94 10-8.8C22 5.94 17.52 2 12 2z"/></svg>
+        LINEで相談する
+      </a>
+      <a href="#contact" class="btn btn--light cta-link" data-cta="hero_doc">資料請求する</a>
+    </div>
   </div>
   <div class="hero__scroll">SCROLL</div>
 </section>
@@ -1320,7 +1490,77 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- 8. 資料請求（最終CTA） -->
+<!-- 8. LINEでのご相談 -->
+<!-- ============================================================ -->
+<section class="section section--dark line-section" id="line" data-section="line">
+  <span class="label reveal">LINE</span>
+  <h2 class="section-title reveal">まずはLINEで<br>資料請求・ご相談も可能です。</h2>
+  <p class="section-lead reveal" style="text-align:left; margin-left:auto; margin-right:auto;">
+    資料請求だけでも歓迎しております。<br>
+    お気軽にメッセージをお送りください。
+  </p>
+
+  <div class="line-card reveal">
+    <div class="line-card__qr" id="lineQrTrigger">
+      <img src="https://qr-official.line.me/gs/M_412wavie_GW.png?oat_content=qr" alt="公式LINE QRコード" loading="lazy">
+    </div>
+    <ul class="line-card__list">
+      <li>販売図面が欲しい</li>
+      <li>住宅ローン相談をしたい</li>
+      <li>内見予約をしたい</li>
+      <li>資産価値について聞きたい</li>
+    </ul>
+    <a href="https://qr-official.line.me/gs/M_412wavie_GW.png?oat_content=qr" target="_blank" rel="noopener" class="btn btn--line cta-link" data-cta="line_add">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.78 1.55 5.24 3.97 6.86-.13.93-.5 2.55-.93 3.74-.06.16.06.34.23.34.04 0 .09-.01.13-.03.15-.07 2.46-1.13 3.66-1.79.95.2 1.95.31 2.94.31 5.52 0 10-3.94 10-8.8C22 5.94 17.52 2 12 2z"/></svg>
+      LINEを追加する
+    </a>
+    <p class="line-card__note">QRコードを読み込むか、上のボタンからご登録ください</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 9. 運営会社 -->
+<!-- ============================================================ -->
+<section class="section section--white" data-section="company">
+  <span class="label reveal">ABOUT US</span>
+  <h2 class="section-title reveal">運営会社</h2>
+
+  <div class="company-grid reveal">
+    <div class="company-card">
+      <img class="company-card__logo" src="company/logo.png" alt="株式会社I do ロゴ">
+      <p class="company-card__name">株式会社 I do（アイドゥー）</p>
+      <p class="company-card__biz">不動産売買仲介・不動産コンサルティング</p>
+      <dl>
+        <div class="company-card__row">
+          <dt>所在地</dt>
+          <dd>〒151-0051<br>東京都渋谷区千駄ヶ谷5丁目15番14号 三砂ビル2F</dd>
+        </div>
+        <div class="company-card__row">
+          <dt>免許番号</dt>
+          <dd>東京都知事(4)第89542号</dd>
+        </div>
+        <div class="company-card__row">
+          <dt>TEL</dt>
+          <dd>03-5368-4610</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="staff-card">
+      <div class="staff-card__badge" aria-hidden="true">清藤</div>
+      <p class="staff-card__role">担当者紹介</p>
+      <p class="staff-card__name">清藤 勇志（きよふじ たかし）</p>
+      <p class="staff-card__text">
+        東京都内を中心に不動産売買仲介を行っております。<br><br>
+        住宅購入だけでなく、住宅ローン・資産価値・将来の売却まで含めてサポートしております。<br><br>
+        まずは資料請求だけでもお気軽にご相談ください。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 10. 資料請求（最終CTA） -->
 <!-- ============================================================ -->
 <section class="final-cta" id="contact" data-section="contact">
   <span class="label reveal">CONTACT</span>
@@ -1364,7 +1604,10 @@
 <!-- FIXED BOTTOM CTA -->
 <!-- ============================================================ -->
 <div class="fixed-cta">
-  <a href="#contact" class="btn cta-link" data-cta="fixed_bar">詳細資料を受け取る</a>
+  <div class="fixed-cta__inner">
+    <a href="#line" class="btn btn--line cta-link" data-cta="fixed_line">LINEで相談</a>
+    <a href="#contact" class="btn btn--primary cta-link" data-cta="fixed_doc">資料請求する</a>
+  </div>
 </div>
 
 <script>
@@ -1373,8 +1616,6 @@
   /* ---------- CTA: scroll to contact section ---------- */
   document.querySelectorAll('.cta-link').forEach(function(el){
     el.addEventListener('click', function(e){
-      e.preventDefault();
-
       var ctaName = el.getAttribute('data-cta') || 'unknown';
       if (typeof gtag === 'function') {
         gtag('event', 'generate_lead', {
@@ -1383,9 +1624,13 @@
         });
       }
 
-      var target = document.getElementById('contact');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+      var href = el.getAttribute('href') || '';
+      if (href.charAt(0) === '#') {
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
   });
@@ -1511,6 +1756,15 @@
     var img = floorplanTrigger.querySelector('img');
     openLightbox(img.src, img.alt);
   });
+
+  /* LINE QR code */
+  var lineQrTrigger = document.getElementById('lineQrTrigger');
+  if (lineQrTrigger) {
+    lineQrTrigger.addEventListener('click', function(){
+      var img = lineQrTrigger.querySelector('img');
+      openLightbox(img.src, img.alt, '公式LINE', 'QRコードを読み込んでご登録ください');
+    });
+  }
 
   /* POSSIBILITIES: before / after photos */
   document.querySelectorAll('.renovation-pair figure').forEach(function(fig){
